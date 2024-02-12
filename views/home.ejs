@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style.css">
+
+
+  <title>Meu Blog</title>
+</head>
+<body>
+  <header>
+    <h1>Meu Blog Pessoal</h1>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/new">Nova Postagem</a></li>
+        <li><a href="/about">Sobre</a></li>
+        <li><a href="/contact">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="main-content">
+    <h2>Últimas Postagens</h2>
+    <ul>
+      <% posts.forEach(post => { %>
+        <li>
+          <h3><a href="/post/<%= post.id %>"><%= post.title %></a></h3>
+          <p><%= post.content %></p>
+        </li>
+      <% }); %>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Blog do Vitor</p>
+  </footer>
+</body>
+</html>
